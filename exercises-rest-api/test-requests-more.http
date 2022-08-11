@@ -1,0 +1,138 @@
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bench Press",
+    "reps": 999,
+    "weight": 1000,
+    "unit": "kg",
+    "date": "2022-08-11T03:41:33.956Z"
+}
+
+### Invalid data
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Exercise",
+    "reps": 10,
+    "weight": 5,
+    "unit": "kg",
+    "date": "abcd"
+}
+
+
+###
+GET http://localhost:3000/exercises HTTP/1.1
+
+###
+GET http://localhost:3000/exercises/62f47c7c49990e2d39a0c09a
+
+###
+GET http://localhost:3000/exercises/?year=2022
+
+###
+GET http://localhost:3000/exercises/?language=English
+
+
+###
+PUT http://localhost:3000/exercises/62f4856656a0aabb70be7581 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bench Press",
+    "reps": 99,
+    "weight": 1000,
+    "unit": "kg",
+    "date": "2022-08-11T03:41:33.956Z"
+}
+
+###
+PUT http://localhost:3000/validate/ HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Bench Press",
+    "reps": -5,
+    "weight": "okay",
+    "unit": "kg",
+    "date": "2022-08-11T03:41:33.956Z"
+}
+
+###
+DELETE http://localhost:3000/exercises/62f4831cf7f768eb4c4376ac HTTP/1.1
+
+
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Eternal Sunshine Of The Spotless Mind",
+    "year": 2004,
+    "language": "English"
+}
+
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "title": "High Fidelity",
+    "year": 2000,
+    "language": "English"
+}
+
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Anchorman",
+    "year": 2004,
+    "language": "English"
+}
+
+
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "title": "No Country For Old Men",
+    "year": 2007,
+    "language": "English"
+}
+
+
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "title": "A Serious Man",
+    "year": 2009,
+    "language": "English"
+}
+
+
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "title": "City Of God",
+    "year": 2003,
+    "language": "Portuguese"
+}
+
+###
+POST http://localhost:3000/exercises HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Parasite",
+    "year": 2019,
+    "language": "Korean"
+}
