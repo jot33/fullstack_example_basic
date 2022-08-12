@@ -1,0 +1,184 @@
+/*  ===== MOBILE styles (inherited by all devices) ===== 
+/*  ===== See tablet, desktop, and print @media queries at the bottom.
+
+/*   ----- Imports  -----  */
+
+/* Add fonts from the server ... */
+/* @font-face {                
+  font-family: 'FontName';
+  src: url('FontName.woff2') format('woff2');
+}  */
+
+/* ...or hosted services like Google Fonts */
+@import '../node_modules/modern-normalize/modern-normalize.css';
+
+/* npm install modern-normalize 
+Resets elements for browser consistancy.  
+http://nicolasgallagher.com/about-normalize-css/ 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap');
+
+
+/*   ----- Variables  -----  */
+:root {  
+  --darkblue-thing100: hsla(206, 90%, 12%, 1);
+  --blue-thing100: hsla(198, 91%, 47%, 1);
+  --blue-thing70: hsla(198, 91%, 47%, .7);
+  --blue-thing30: hsla(198, 91%, 47%, .3);
+  --blue-thing10: hsla(198, 91%, 47%, .1);
+  --pink-thing100: hsla(296, 91%, 47%, 1);
+  --earth-thing100: hsla(41, 44%, 49%, 1);
+  --earth-thing70: hsla(41, 44%, 49%, .7);
+  --earth-thing30: hsla(41, 44%, 49%, .3);
+  --earth-thing10: hsla(41, 44%, 49%, .1);
+  --green-thing100: hsla(116, 91%, 47%, 1);
+  --green-thing30: hsla(116, 91%, 47%, .3);
+  --green-thing10: hsla(116, 91%, 47%, .1);
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {                     /* Can alternatively define in html {} or :root {} */
+  color: var(--darkblue-thing100);
+  background-color: var(--blue-thing30);
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  margin:5px;
+  padding:5px;
+  text-align: center;
+}
+
+/* ----- Anchors ----- Text links */
+a {
+  text-decoration: none;
+  background-color: var(--blue-thing100);
+  color: var(--darkblue-thing100);
+  border: ridge;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 5px;
+}
+a:hover {
+  background-color: var(--green-thing30);
+  color: var(--darkblue-thing100);
+  border: groove;
+}
+a:active {
+  background-color: var(--green-thing100);
+}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  display: grid;
+  justify-content: space-evenly;
+}
+nav a {
+  background-color: var(--green-thing100);
+  color: var(--darkblue-thing100);
+  border-radius: 5px;
+  border: ridge var(--darkblue-thing100);
+  margin: 10px;
+  padding: 5px;
+}
+
+nav a:hover {
+  background-color: var(--earth-thing70);
+  border: groove var(--darkblue-thing100);
+}
+
+nav a:active {
+  background-color: var(--earth-thing100);
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+  background-color: var(--blue-thing70);
+  text-align: center;
+  border: groove var(--darkblue-thing100);
+  font-size: 150%;
+  color: var(--darkblue-thing100);
+  margin: 5px;
+}
+
+.header-link {
+  background-color: var(--pink-thing100);
+}
+
+main {
+  background-color: var(--green-thing30);
+  border: groove var(--darkblue-thing100);
+  padding: 10px;
+  margin: 5px;
+  display: grid;
+  row-gap: 5px;
+}
+
+footer {
+  background-color: var(--earth-thing70);
+  color: var(--darkblue-thing100);
+  text-align: center;
+  font-size: 1.5em;
+  padding: 1px;
+  margin: 5px;
+  border: groove var(--darkblue-thing100);
+}
+
+h1 {
+  font-size: 1.6em;
+}
+h2 {
+  font-size: 1.5em;
+}
+h3 {
+  font-size: 1.4em;
+}
+
+/*  ----- Table ----- */
+table {
+  background-color: var(--earth-thing70);
+  border: 2px ridge var(--darkblue-thing100);
+  border-collapse: collapse;
+  font-size: 80%;
+  border-spacing: 20%;
+}
+thead {
+  border-bottom: ridge;
+  border-color: var(--darkblue-thing100);
+  font-size: 100%;
+}
+  tr:nth-child(odd) {background: var(--blue-thing100);}
+th {
+  padding: 3%;
+  border-color: var(--green-thing100);
+}
+td {padding: 3%;}
+td.clickable {
+  cursor: pointer;
+  padding: 2% 3% 2% 3%;
+}
+td.clickable:hover{background-color: var(--pink-thing10);}
+
+
+/*  ----- Form ----- */
+fieldset {
+  display: grid;
+  justify-content: space-evenly;
+  row-gap: 5px;
+  font-size: 1.5em;
+}
+
+button {
+  background-color: var(--green-thing100);
+  color: var(--darkblue-thing100);
+  font-size: 1.4em;
+  border-radius: 5px;
+  border: ridge var(--darkblue-thing100);
+  padding: 5px;
+}
+button:hover {
+  background-color: var(--earth-thing70);
+  cursor: pointer;
+}
+button:active {
+  background-color: var(--earth-thing100);
+}
